@@ -22,9 +22,9 @@ public class Main {
 //            List sub=b.subString(10, 48);
 //            sub.print();
 //
-            System.out.println("Insert: " );
-            b.insert("hey", 12);
-            b.print();
+//            System.out.println("Insert: " );
+//            b.insert("hey", 12);
+//            b.print();
 //
 //        System.out.println(" len: "+b.len());
 //        System.out.println();
