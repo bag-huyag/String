@@ -7,7 +7,7 @@ public class Node {
     Node next;
 
 
-    public Node(int n, char[] ar, Node a)
+    public Node(int n, char[] ar, Node a) //СОЗДАНИЕ БЛОКА
     {
         next = a;
         array = ar;

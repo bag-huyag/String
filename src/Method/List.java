@@ -1,4 +1,4 @@
-package Method;
+ package Method;
 
 public class List {
     private Node head;
@@ -189,7 +189,7 @@ public class List {
     }
 
     public void setCharAt(int index,char symbol) throws ArrayIndexOutOfBoundsException{
-        PositionAndBlock u= searchBlock(index);
+        PositionAndBlock u = searchBlock(index);
         Node h = u.next;
             if ((index>0)&&(index<=len())) {
                 for (int i = 0; i <= h.array.length; i++) {
