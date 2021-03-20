@@ -1,4 +1,7 @@
- package Method;
+package Method;
+
+import ListException.*;
+
 
 public class List {
     private Node head;
@@ -112,7 +115,7 @@ public class List {
         return k;
     }
 
-    public void insert (String str, int index) throws ArrayIndexOutOfBoundsException{
+    public void insert (String str, int index) throws ListException{
             if ((index>0)&&(index<=len())) {
                 List st = new List(str);// переделали введенную строку в список
                 List a = new List(st);
@@ -131,7 +134,7 @@ public class List {
                 }
             }
             else {
-                throw new ArrayIndexOutOfBoundsException("Введеный номер символа превышает длину строки");
+                throw new ListException("Введеный номер символа превышает длину строки", index);
             }
         }
 
@@ -172,7 +175,7 @@ public class List {
         uk.next = symbol.head; // перебросили указатель
     }
 
-    public char charAt (int index) throws ArrayIndexOutOfBoundsException{
+    public char charAt (int index) throws ListException {
         PositionAndBlock u= searchBlock(index);
         Node h = u.next;
         if ((index>0)&&(index<=len())) {
@@ -184,14 +187,16 @@ public class List {
             return '\0';
         }
         else {
-            throw new ArrayIndexOutOfBoundsException("Введеный номер символа превышает длину строки");
+            throw new ListException("Введеный номер символа превышает длину строки", index);
         }
     }
 
-    public void setCharAt(int index,char symbol) throws ArrayIndexOutOfBoundsException{
-        PositionAndBlock u = searchBlock(index);
-        Node h = u.next;
+    public void setCharAt(int index,char symbol) throws ListException {
+//        PositionAndBlock u = searchBlock(index);
+//        Node h = u.next;
             if ((index>0)&&(index<=len())) {
+                PositionAndBlock u = searchBlock(index);
+                Node h = u.next;
                 for (int i = 0; i <= h.array.length; i++) {
                     if (i == u.position - 1) {
                         h.array[i] = symbol;
@@ -199,7 +204,7 @@ public class List {
                 }
             }
             else {
-                throw new ArrayIndexOutOfBoundsException("Введеный номер символа превышает длину строки");
+                throw new ListException("Введеный номер символа превышает длину строки.", index);
             }
     }
 
