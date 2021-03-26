@@ -1,0 +1,28 @@
+public ListString subString(int start, int end) {
+start--;
+Pos st = findBlock(start);//стартовый блок
+Pos en = findBlock(--end);//последний блок длListString newList = new ListString();я вырезки не включительно
+if (st.posit<0) throw new IndexException("Введенный номер некорректен", start);
+ListString newList = new ListString();
+StringItem c = en.next;
+StringItem h = st.next;
+if (h == en.next) { //если указатели совпадают, то есть нужная для вырезки часть находится в одном блоке, то эта часть копируется
+char[] arr = new char [16];
+arr=copy(h.symbols, arr, st.posit, en.posit,0); //копирование от и до указанных позиций
+newList.head = new StringItem(end - start, arr, null); //создание блока вырезанного куска
+return newList;
+}
+if (end>leng()) { //если конец находится за пределами строки
+char[] p = new char[16];
+p = copy(st.next.symbols, p, st.posit, st.next.size,0);
+StringItem head1 = new StringItem (st.next.size-st.posit,p,null);
+newList.head=head1;
+StringItem hvost=st.next;
+StringItem k=hvost.next;
+while (k!= null)
+{
+head1.next=k;
+k=k.next;
+}
+return newList;
+}
