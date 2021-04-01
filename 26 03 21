@@ -26,3 +26,21 @@ k=k.next;
 }
 return newList;
 }
+ public void insert (ListString c, int k)
+
+    {
+ListString c1=new ListString (c);
+Pos x=findBlock (k);
+StringItem c2=cutBlock(x.next, x.index);
+        vstavka (c1, c2);
+}
+private  void vstavka (ListString p, StringItem k)
+{
+
+private void vstavka (ListString h, StringItem fr)
+    {
+        StringItem p=fr.next, k;
+        fr.next=h.head;
+        k=h.searchEnd();
+        k.next=p;
+    }
