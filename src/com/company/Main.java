@@ -6,25 +6,25 @@ import Method.*;
 
 public class Main {
 
-    public static void main(String[] args) throws ListException {
+    public static void main(String[] args) /*throws ListException*/ {
         String start = "WinRAR это архиватор RAR для Windows — мощный инструмент для архивирования и управления архивами. Помимо Windows, существуют версии RAR для других операционных систем — Linux, FreeBSD, macOS, Android.";
         List b = new List (start);
         System.out.print("Исходный \n");
 
         b.print();
-
+//
 //            System.out.println("charAt: "+b.charAt(30));
 //            System.out.println( );
 //            System.out.print("setCharAt: \n");
-//            b.setCharAt(30,'M');
+//            b.setCharAt(16,'M');
 //            b.print();
-//
+
 //            System.out.print("substring:\n");
-//            List sub=b.subString(1, 32);
+//            List sub=b.subString(3,9);
 //            sub.print();
 //
 //            System.out.println("Insert: " );
-//            b.insert("hhhhhhhhhhhheeeeeeeeeeeyyyyyyyyyyy", 12);
+//            b.insert("hhhhhhhhhhhheeeeeeeeeeeyyyyyyyyy", 15);
 //            b.print();
 //
 //        System.out.println(" len: "+b.len());
@@ -38,9 +38,9 @@ public class Main {
 //       System.out.println("Apened Symbol: " );
 //        b.append('a');
 //        b.print();
-//
+
 //        System.out.println("ToString: "+b.toString());
-//
+
 
     }
 }
